@@ -1,0 +1,26 @@
+
+@import '../../../assets/scss/abstracts/variables'; 
+
+.loading-spinner{    
+    background-color: rgba($text-white, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    z-index: 999;
+    color: $windsor;
+    font-size: 20px;
+}
+
+.loading-spinner img{
+    align-self: end;
+}
+
+.loading-message{
+    text-align: center;
+    align-self: start;
+}

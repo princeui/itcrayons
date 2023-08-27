@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.btn {
+  padding: 10px 40px;
+  position: relative;
+  border-radius: 50px;
+  transition: all 0.6s;
+  border: 0 none;
+
+  &.btn-primary {
+    background: linear-gradient(80deg, #6c19f6 0%, #f9218d 100%);
+    color: $text-white;
+    background-size: 200% auto;
+    @include on-event {
+      text-decoration: none;
+      background-position: right center;
+    }
+  }
+
+  &.btn-secondary {
+    background: $twilightBlue;
+    color: $windsor;
+
+    @include on-event {
+      background: darken($twilightBlue, 10%);
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@import '../assets/scss/abstracts/variables';
+main {
+    position: relative;
+    z-index: 2;
+    background: $text-white;
+}

@@ -1,0 +1,169 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.footer {
+  padding: 40px 0 0 0;
+  overflow: hidden;
+  background: $mineShaft;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  @include respond-below(sm) { 
+    padding: 0;
+  }
+
+  .aside-stretch-right {
+    @include respond-below(sm) {
+      background: transparent;
+
+      &::after {
+        background: transparent;
+        display: none;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      bottom: 0;
+      content: "";
+      width: 360%;
+      background: $lightMineShaft;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: $text-white;
+    text-transform: uppercase;
+  }
+
+  ul.list-unstyled {
+    li {
+      a {
+        color: $text-color;
+      }
+    }
+  }
+  .form-consultation {
+    width: 100%;
+
+    .form-control {
+      height: 44px !important;
+      background: rgba($text-white, 0.1) !important;
+      color: rgba($text-white, 0.8) !important;
+      font-size: 14px;
+      border-radius: 5px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      border: none;
+
+      @include placeholder {
+        color: rgba($text-white, 0.3);
+      }
+
+      @include on-event {
+        outline: none !important;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        outline: none !important;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+    textarea.form-control {
+      height: inherit !important;
+    }
+  }
+  .aside-stretch-right {
+    background: $lightMineShaft;
+    &:after {
+      background: $lightMineShaft;
+    }
+  }
+}
+.ftco-footer-social {
+  display: flex;
+  li {
+    list-style: none;
+    margin: 0 10px 0 0;
+    display: inline-block;
+    a {
+      height: 40px;
+      width: 40px;
+      background: rgba($text-white, 0.05);
+      border-radius: 50%;
+      position: relative;
+      display: inline-block;
+      i {
+        position: absolute;
+        font-size: 20px;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: $text-white;
+      }
+      &:hover {
+        color: $text-white;
+      }
+    }
+  }
+}
+.footer-small-nav {
+  > li {
+    display: inline-block;
+    a {
+      margin: 0 10px 10px 0;
+      &:hover {
+        color: #1ba12d;
+      }
+      &:focus {
+        color: #1ba12d;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(27, 161, 45, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 30px rgba(27, 161, 45, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(27, 161, 45, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(27, 161, 45, 0.4);
+    -webkit-box-shadow: 0 0 0 0 rgba(27, 161, 45, 0.4);
+    box-shadow: 0 0 0 0 rgba(27, 161, 45, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 30px rgba(27, 161, 45, 0);
+    -webkit-box-shadow: 0 0 0 30px rgba(27, 161, 45, 0);
+    box-shadow: 0 0 0 30px rgba(27, 161, 45, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(27, 161, 45, 0);
+    -webkit-box-shadow: 0 0 0 0 rgba(27, 161, 45, 0);
+    box-shadow: 0 0 0 0 rgba(27, 161, 45, 0);
+  }
+}
+
+.footer-bottom {
+  background: darken($mineShaft, 5%);
+  padding: 10px;
+}

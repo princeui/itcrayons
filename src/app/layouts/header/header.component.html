@@ -1,0 +1,31 @@
+<header class="header fixed-top">
+    <div id="topbar" class="d-none d-lg-flex align-items-center">
+        <div class="container d-flex align-items-center">
+            <div class="contact-info mr-auto">
+                <ul>
+                    <li>
+                        <i class="icofont-envelope"></i>
+                        <a href="mailto:itcrayons@outlook.com">itcrayons@outlook.com</a>
+                    </li>
+                    <li><i class="icofont-phone"></i> <a href="tel:8766385891" >+918766385891</a></li>
+                    <li><i class="icofont-clock-time icofont-flip-horizontal"></i> Mon-Fri 10am - 6pm</li>
+                </ul>
+            </div>
+            <div class="cta">
+                <a routerLink="contact" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </div>
+    <nav class="header-menu" (scroll)="scrolling($event);" [ngClass]="{'headerFixed':headerFixed}">
+        <div class="container d-flex align-items-center ">
+            <h1 class="logo mr-auto">
+                <a routerLink="" class="scrollto">ITcrayons</a>
+            </h1>
+            <nav class="nav-menu">
+                <ul class="d-flex">
+                    <li *ngFor="let link of links"><a [routerLink]="[link.href]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{link.text}}</a></li>
+                </ul>
+            </nav><!-- .nav-menu --> 
+        </div>
+    </nav>
+</header>

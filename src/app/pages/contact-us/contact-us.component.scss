@@ -1,0 +1,18 @@
+@import "../../../assets/scss/abstracts/variables",
+  "../../../assets/scss/abstracts/mixins",
+  "../../../assets/scss/abstracts/functions";
+
+.contact-banner {
+  background: $windsor image("tileable-wood.png") repeat 0 0;
+  background-attachment: fixed;
+  padding-top: 135px;
+  min-height: 60vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 92px;
+
+  h1 {
+    color: $text-white;
+  }
+}

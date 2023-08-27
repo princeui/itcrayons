@@ -1,0 +1,104 @@
+<section class="contact-banner d-flex">
+    <h1 class="text-center">Contact Us</h1>
+</section>
+<section class="contact-box">
+    <div class="container">
+        <article class="content-content">
+            <div class="row">
+                <div class="col-md-6 col-lg-7">
+                    <div class="contact-form">
+                        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group user-icon icon" [ngClass]="{'invalid' 
+                            : f.name.touched && f.name.errors}">
+                                <input type="text" formControlName="name" class="form-control" placeholder="Name">
+                                <div *ngIf="f.name.errors && (f.name.dirty || f.name.touched)" class="error-text mt-2">
+                                    <div *ngIf="f.name.errors.required">
+                                        Name is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group email-icon icon" [ngClass]="{'invalid' 
+                            : f.email.touched && f.email.errors}">
+                                <input type="email" formControlName="email" class="form-control" placeholder="Email">
+                                <div *ngIf="f.email.errors && (f.email.dirty || f.email.touched)"
+                                    class="error-text mt-2">
+                                    <div *ngIf="f.email.errors.required">
+                                        Email is required.
+                                    </div>
+                                    <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                                </div>
+                            </div>
+                            <div class="form-group phone-icon icon" [ngClass]="{'invalid' 
+                            : f.phone.touched && f.phone.errors}">
+                                <input type="text" formControlName="phone" max="12" class="form-control"
+                                    placeholder="Phone">
+                                <div *ngIf="f.phone.errors && (f.phone.dirty || f.phone.touched)"
+                                    class="error-text mt-2">
+                                    <div *ngIf="f.phone.errors.required">
+                                        Phone is required.
+                                    </div>
+                                    <div *ngIf="f.phone.errors.pattern">Phone Number must be a valid Number</div>
+                                </div>
+                            </div>
+                            <div class="form-group chat-icon icon" [ngClass]="{'invalid' 
+                            : f.message.touched && f.message.errors}">
+                                <textarea class="form-control" formControlName="message" rows="5"
+                                    placeholder="Message"></textarea>
+                                <div *ngIf="f.message.errors && (f.message.dirty || f.message.touched)"
+                                    class="error-text mt-2">
+                                    <div *ngIf="f.message.errors.required">
+                                        Message is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-primary" type="submit" [disabled]="!contactForm.valid">Send
+                                    Request</button>
+                            </div>
+                        </form>
+                        <!-- <p style="color: #000;">
+                            Form Value: {{ contactForm.value | json }}
+                        </p>
+                        <p style="color: #000;">
+                            Form Status: {{ contactForm.status }}
+                        </p> -->
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="contact-info-sec">
+                        <ul class="contact-address">
+                            <!--<li>
+                                <i class="icofont-location-pin"></i> 1311/2, Wave City, Ghaziabad
+                            </li>-->
+                            <li>
+                                <i class="icofont-email"></i>
+                                <a href="mailto:itcrayons@outlook.com">itcrayons@outlook.com</a>
+                            </li>
+                            <li>
+                                <i class="icofont-mobile-phone"></i>
+                                <a href="tel:+918766385891">+918766385891</a>
+                            </li>
+                        </ul>
+                        <ul class="contact-social-icons">
+                            <li>
+                                <a href="#">
+                                    <i class="icofont-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icofont-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icofont-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
