@@ -71,13 +71,27 @@
     
   }
   .nav-menu {
+    @include respond-below(sm) { 
+      display: none;
+      position: absolute;
+      top: 100%;
+      background-color: #fff;
+      left: 0;
+      right: 0;
+    }
     ul {
       padding: 0;
       margin: 0;
+      @include respond-below(sm) { 
+        flex-direction: column;
+      }
       li {
         list-style: none;
         white-space: nowrap;
         margin-left: 10px;
+        @include respond-below(sm) {
+          margin: 0;
+        }
         a {
           position: relative;
           font-weight: 400;
@@ -85,7 +99,13 @@
           color: $windsor;
           transition: 0.3s;
           font-size: 16px;
-          padding: 10px 20px;
+          padding: 5px 20px;
+          @include respond-below(sm) {
+            display: block;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+          }
+
           &:before {
             content: "";
             position: absolute;
@@ -97,6 +117,9 @@
             visibility: hidden;
             width: 0px;
             transition: all 0.3s ease-in-out 0s;
+            @include respond-below(sm) {
+              display: none;
+            }
           }
           @include on-event {
             &:before {

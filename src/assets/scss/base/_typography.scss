@@ -5,6 +5,9 @@ body {
   color: $text-color;
   font: normal 15px / 1.4 $text-font-stack;
   padding-bottom: 340px;
+  @include respond-below(sm) { 
+    padding: 0;
+  }
 }
 
 

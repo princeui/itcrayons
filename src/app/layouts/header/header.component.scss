@@ -1,0 +1,38 @@
+@import "../../../assets/scss/abstracts/variables",
+  "../../../assets/scss/abstracts/mixins",
+  "../../../assets/scss/abstracts/functions";
+
+
+
+.navbar-toggler {
+    background-color: transparent;
+    border: 1px solid #6c19f6;
+    display: none;
+
+    .navbar-toggler:hover, .navbar-toggler:focus {
+      text-decoration: none;
+      border: 1px solid #6c19f6;
+      outline:0 none;
+  }
+
+
+    @include respond-below(sm) { 
+      display: block;
+    }
+}
+
+button:focus {
+  outline:0 none;
+}
+
+.fa-bars:before, 
+.fa-navicon:before {
+  font-size: 32px;
+  color:#6c19f6;
+}
+h1, .h1 {
+    
+  @include respond-below(sm) {
+  font-size: 2.0rem;
+}
+}

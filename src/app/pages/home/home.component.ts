@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { LoaderService } from 'src/app/services/loader.service';
+import { EmailService } from '../../services/email.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,7 +12,7 @@ export class HomeComponent {
 
   contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder,private emailservice: EmailService, private loaderservice: LoaderService) { 
     this.contactForm = fb.group({
       'name': ['', Validators.required],
       'email': ['', [Validators.required, Validators.email]],
@@ -25,7 +26,18 @@ export class HomeComponent {
   }
 
   onSubmit():void {
-    alert(this.contactForm.valid);
-  }
+   // alert(this.contactForm.valid);
+    this.loaderservice.isLoading.next(true);
+    this.emailservice.sendMessage(this.contactForm.value).subscribe(
+      data => {
+        console.log(data);
+        this.loaderservice.isLoading.next(false);
+      },
+      err => {
+        console.log(err); 
+        this.loaderservice.isLoading.next(false);
+      }
+  
+  )}
 
 }

@@ -8,6 +8,7 @@ import { HeaderLinks } from '../../interfaces/interfaces';
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   headerFixed: boolean = false;
+  mobileNav: boolean = false;
 
   constructor() { }
 
@@ -54,4 +55,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.headerFixed = false;
     }
   };  
+  toggle = (): void =>{
+    this.mobileNav = !this.mobileNav
+  }
 }
